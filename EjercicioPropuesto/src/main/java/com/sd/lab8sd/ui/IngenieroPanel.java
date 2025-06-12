@@ -45,6 +45,9 @@ public class IngenieroPanel extends Panel{
                     JOptionPane.showMessageDialog(this, "Insertado con ID " + i.getIdIng());
                     refreshIngenieros(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -56,6 +59,9 @@ public class IngenieroPanel extends Panel{
                     JOptionPane.showMessageDialog(this, "Actualizado correctamente");
                     refreshIngenieros(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -66,6 +72,9 @@ public class IngenieroPanel extends Panel{
                     JOptionPane.showMessageDialog(this, "Eliminado correctamente");
                     refreshIngenieros(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -83,6 +92,9 @@ public class IngenieroPanel extends Panel{
             for (Ingeniero i : iDao.listar()) {
                 model.addRow(new Object[]{i.getIdIng(), i.getIdDpto(), i.getNombre(), i.getApellido(), i.getEspecialidad(), i.getCargo()});
             }
+
+            limpiarInputs();
+
         } catch (Exception ex) {
             showError(ex);
         }

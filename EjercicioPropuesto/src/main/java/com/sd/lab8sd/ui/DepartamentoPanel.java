@@ -41,6 +41,9 @@ public class DepartamentoPanel extends Panel {
                     JOptionPane.showMessageDialog(this, "Insertado con ID " + d.getId());
                     refreshDepartamentos(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -52,6 +55,9 @@ public class DepartamentoPanel extends Panel {
                     JOptionPane.showMessageDialog(this, "Actualizado correctamente");
                     refreshDepartamentos(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -62,6 +68,9 @@ public class DepartamentoPanel extends Panel {
                     JOptionPane.showMessageDialog(this, "Eliminado correctamente");
                     refreshDepartamentos(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -79,6 +88,9 @@ public class DepartamentoPanel extends Panel {
             for (Departamento d : dDao.listar()) {
                 model.addRow(new Object[]{d.getId(), d.getNombre(), d.getTelefono(), d.getFax()});
             }
+
+            limpiarInputs();
+
         } catch (Exception ex) {
             showError(ex);
         }

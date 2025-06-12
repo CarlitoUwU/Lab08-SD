@@ -41,6 +41,9 @@ public class AsignacionPanel extends Panel{
                     JOptionPane.showMessageDialog(this, "Asignación insertada con ID " + a.getIdAsignacion());
                     refreshAsignaciones(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -52,6 +55,9 @@ public class AsignacionPanel extends Panel{
                     JOptionPane.showMessageDialog(this, "Asignación actualizada correctamente");
                     refreshAsignaciones(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -62,6 +68,9 @@ public class AsignacionPanel extends Panel{
                     JOptionPane.showMessageDialog(this, "Asignación eliminada correctamente");
                     refreshAsignaciones(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -79,6 +88,9 @@ public class AsignacionPanel extends Panel{
             for (Asignacion a : aDao.listar()) {
                 model.addRow(new Object[]{a.getIdAsignacion(), a.getIdIng(), a.getIdProy(), a.getRolProyecto()});
             }
+
+            limpiarInputs();
+
         } catch (Exception ex) {
             showError(ex);
         }

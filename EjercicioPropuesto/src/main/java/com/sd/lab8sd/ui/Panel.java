@@ -12,4 +12,17 @@ public class Panel extends JPanel {
     public void showError(Exception e) {
         JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
+
+    public void limpiarInputs() {
+        // Limpiar los campos de entrada
+        for (Component comp : this.getComponents()) {
+            if (comp instanceof JPanel) {
+                for (Component innerComp : ((JPanel) comp).getComponents()) {
+                    if (innerComp instanceof JTextField) {
+                        ((JTextField) innerComp).setText("");
+                    }
+                }
+            }
+        }
+    }
 }

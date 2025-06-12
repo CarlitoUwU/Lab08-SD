@@ -44,6 +44,9 @@ public class ProyectoPanel extends Panel {
                     JOptionPane.showMessageDialog(this, "Insertado con ID " + p.getIdProy());
                     refreshProyectos(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -57,6 +60,9 @@ public class ProyectoPanel extends Panel {
                     JOptionPane.showMessageDialog(this, "Actualizado correctamente");
                     refreshProyectos(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -67,6 +73,9 @@ public class ProyectoPanel extends Panel {
                     JOptionPane.showMessageDialog(this, "Eliminado correctamente");
                     refreshProyectos(model);
                 }
+
+                limpiarInputs();
+
             } catch (Exception ex) {
                 showError(ex);
             }
@@ -84,6 +93,7 @@ public class ProyectoPanel extends Panel {
             for (Proyecto p : pDao.listar()) {
                 model.addRow(new Object[]{p.getIdProy(), p.getNombre(), p.getFechaInicio(), p.getFechaFin()});
             }
+            limpiarInputs();
         } catch (Exception ex) {
             showError(ex);
         }
