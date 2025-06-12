@@ -13,7 +13,7 @@ public class ProyectosPorDptoPanel extends Panel{
     private final DepartamentoDAO dDao = new DepartamentoDAO();
 
     public ProyectosPorDptoPanel() {
-        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Nombre", "Fecha Inicio", "Fecha Fin", "Created At", "Updated At"}, 0);
+        DefaultTableModel model = new DefaultTableModel(new String[]{"ID Proyecto", "Nombre", "Fecha Inicio", "Fecha Fin"}, 0);
         JTable table = new JTable(model);
 
         JPanel form = new JPanel();
@@ -38,8 +38,6 @@ public class ProyectosPorDptoPanel extends Panel{
                             p.getNombre(),
                             p.getFechaInicio(),
                             (p.getFechaFin() != null ? p.getFechaFin() : "-"),
-                            (p.getCreatedAt() != null ? p.getCreatedAt() : "-"),
-                            (p.getUpdatedAt() != null ? p.getUpdatedAt() : "-")
                     });
                 }
             } catch (Exception ex) {
