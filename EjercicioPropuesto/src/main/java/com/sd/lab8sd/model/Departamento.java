@@ -7,16 +7,12 @@ public class Departamento {
     private String nombre;
     private String telefono;
     private String fax;
-    private final LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
     public Departamento(int id, String nombre, String telefono, String fax) {
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
         this.fax = fax;
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
     }
 
     // Getters y Setters
@@ -52,21 +48,9 @@ public class Departamento {
         this.fax = fax;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     @Override
     public String toString() {
-        return String.format("Departamento{id=%d, nombre='%s', telefono='%s', fax='%s', createdAt=%s, updatedAt=%s}",
-                id, nombre, telefono, fax, createdAt, updatedAt);
+        return String.format("Departamento{id=%d, nombre='%s', telefono='%s', fax='%s'}",
+                id, nombre, telefono, fax);
     }
 }

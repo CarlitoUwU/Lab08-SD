@@ -9,8 +9,6 @@ public class Ingeniero {
     private String apellido;
     private String especialidad;
     private String cargo;
-    private final LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
     // Constructor
     public Ingeniero(int idIng, int idDpto, String nombre, String apellido, String especialidad, String cargo) {
@@ -20,8 +18,6 @@ public class Ingeniero {
         this.apellido = apellido;
         this.especialidad = especialidad;
         this.cargo = cargo;
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
     }
 
     // Getters y Setters
@@ -73,23 +69,11 @@ public class Ingeniero {
         this.cargo = cargo;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     @Override
     public String toString() {
         return String.format(
-                "Ingeniero{idIng=%d, idDpto=%d, nombre='%s', apellido='%s', especialidad='%s', cargo='%s', createdAt=%s, updatedAt=%s}",
-                idIng, idDpto, nombre, apellido, especialidad, cargo, createdAt, updatedAt
+                "Ingeniero{idIng=%d, idDpto=%d, nombre='%s', apellido='%s', especialidad='%s', cargo='%s'}",
+                idIng, idDpto, nombre, apellido, especialidad, cargo
         );
     }
 }

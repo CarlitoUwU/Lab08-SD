@@ -8,8 +8,6 @@ public class Proyecto {
     private String nombre;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
-    private final LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
     // Constructor
     public Proyecto(int idProy, String nombre, LocalDate fechaInicio, LocalDate fechaFin) {
@@ -17,8 +15,6 @@ public class Proyecto {
         this.nombre = nombre;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
     }
 
     // Getters y Setters
@@ -54,21 +50,9 @@ public class Proyecto {
         this.fechaFin = fechaFin;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     @Override
     public String toString() {
-        return String.format("Proyecto{idProy=%d, nombre='%s', fechaInicio=%s, fechaFin=%s, createdAt=%s, updatedAt=%s}",
-                idProy, nombre, fechaInicio, fechaFin, createdAt, updatedAt);
+        return String.format("Proyecto{idProy=%d, nombre='%s', fechaInicio=%s, fechaFin=%s}",
+                idProy, nombre, fechaInicio, fechaFin);
     }
 }
